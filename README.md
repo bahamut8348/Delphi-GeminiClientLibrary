@@ -1,8 +1,8 @@
 # 简介
-用delphi与gemini对接的库，实现了 缓存、文件、搜索、内容生成 接口中的方法，其中除 “内容生成” 外均未测试。
+用delphi与gemini对接的库，实现了【缓存】、【文件】、【搜索】、【内容生成】接口中的方法，其中除【内容生成】外均未测试。
 
 # 依赖
-项目中引入了若干外部项目：
+项目中引入了若干外部项目以补全项目所必需的功能，您需要全部获取下列项目才能正常使用本项目：
 
 - [curl](https://github.com/curl/curl.git) 用于处理 http 协议报文收发。
 - [curl4delphi](https://github.com/Mercury13/curl4delphi.git) 用于引用 delphi 中 curl 的相关定义。该项目通过动态库（dll）的方式实现对 curl 的调用，您可以通过编译 curl 源码的方式获得 libcurl 的相关dll，或者直接使用我已编译过的 libcurl.dll 与 libcurl-x64.dll ，您可以在 thirds 目录下找到它们。
@@ -12,6 +12,7 @@
 
 # 例子
 ### Basic text generation
+![截图1](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/1.png)
 ```pas
 var
   pResponse: TGenerateContentResponseBody;
@@ -29,6 +30,7 @@ end;
 ```
 
 ### Chat Session (Multi-Turn Conversations)
+![截图2](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/2.png)
 ```pas
 var
   pResponse: TGenerateContentResponseBody;
@@ -53,8 +55,10 @@ begin
 end;
 ```
 
-![截图1](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/1.png)
-![截图2](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/2.png)
+### 注：
+所有 model 的方法返回的对象都需要手动释放，而 model 本身通过 app 对象进行管理，无需手动释放。
+
+原本计划通过将所有实体类全部接口化来实现生存期自动托管，以避免因对象未释放导致的内存泄露。但由于 gemini 官方接口及相关参数改动太过频繁导致跟不上修改速度，所以在中途弃用了这个方案。目前只有 param、app、model 等基类以及封装 curl 相关功能的部分有接口化，其他均未有与之匹配的 interface 定义。
 
 
 更多请查阅 demos 目录下的测试程序。
