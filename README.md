@@ -12,7 +12,6 @@
 
 # 例子
 ### Basic text generation
-![截图1](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/1.png)
 ```pas
 var
   pResponse: TGenerateContentResponseBody;
@@ -30,7 +29,6 @@ end;
 ```
 
 ### Chat Session (Multi-Turn Conversations)
-![截图2](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/2.png)
 ```pas
 var
   pResponse: TGenerateContentResponseBody;
@@ -54,6 +52,8 @@ begin
     Memo2.Text := FGenerativeModel.GetLastErrorInfo();
 end;
 ```
+![截图1](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/1.png)
+![截图2](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/2.png)
 
 ### 注：
 所有 model 的方法返回的对象都需要手动释放，而 model 本身通过 app 对象进行管理，无需手动释放。
