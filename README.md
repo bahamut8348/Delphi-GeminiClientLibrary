@@ -53,4 +53,8 @@ begin
 end;
 ```
 
+![截图1](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/1.png)
+![截图2](https://github.com/bahamut8348/Delphi-GeminiClientLibrary/blob/main/demos/2.png)
+
+
 更多请查阅 demos 目录下的测试程序。
