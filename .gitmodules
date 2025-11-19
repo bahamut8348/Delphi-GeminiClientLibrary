@@ -1,0 +1,15 @@
+[submodule "thirds/brotli"]
+	path = thirds/brotli
+	url = https://github.com/google/brotli.git
+[submodule "thirds/curl"]
+	path = thirds/curl
+	url = https://github.com/curl/curl.git
+[submodule "thirds/curl4delphi"]
+	path = thirds/curl4delphi
+	url = https://github.com/Mercury13/curl4delphi.git
+[submodule "thirds/DelphiZLib"]
+	path = thirds/DelphiZLib
+	url = https://github.com/BrentSherwood/DelphiZLib.git
+[submodule "thirds/mORMotBP"]
+	path = thirds/mORMotBP
+	url = https://github.com/eugeneilyin/mORMotBP.git
